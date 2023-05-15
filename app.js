@@ -1,7 +1,7 @@
 const inquirer = import("inquirer");
 
 // app questions
-const questionsa = [
+const questions = [
   {
     type: "input",
     name: "title",
@@ -52,3 +52,17 @@ const questionsa = [
     },
   },
 ];
+
+// run query function
+async function runQuery() {
+  return inquirer
+    .prompt(questions)
+    .then((answers) => {
+      console.log(answers);
+      return answers;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+runQuery();

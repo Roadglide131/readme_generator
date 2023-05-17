@@ -58,7 +58,7 @@ function wf(data) {
 }
 function init() {
   inquirer.prompt(questions).then(function (data) {
-    const md = generateMarkdown(data);
+    const md = gm(data);
     wf(md);
   });
 }
